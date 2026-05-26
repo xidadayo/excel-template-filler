@@ -1,0 +1,23 @@
+[project]
+name = "excel-template-filler"
+version = "0.1.0"
+description = "Local CLI Excel multi-template filler"
+requires-python = ">=3.10"
+dependencies = [
+    "openpyxl>=3.1.2",
+    "pandas>=2.0.0",
+    "pydantic>=2.0.0",
+    "loguru>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+excel-template-filler = "excel_template_filler.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
