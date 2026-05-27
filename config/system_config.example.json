@@ -1,0 +1,16 @@
+{
+  "input": {
+    "main_excel_dir": "input/main_excel",
+    "template_dir": "input/templates"
+  },
+  "output": {
+    "filled_files_dir": "output/filled_files",
+    "logs_dir": "output/logs",
+    "reports_dir": "output/reports",
+    "summary_file": "output/summary.txt"
+  },
+  "runtime": {
+    "allow_insert_rows": false,
+    "allow_overwrite_formula": false
+  }
+}

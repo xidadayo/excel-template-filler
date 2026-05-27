@@ -1,0 +1,53 @@
+{
+  "project_name": "Excel 多模板自动填充系统",
+  "main_file": "主表.xlsx",
+  "templates": [
+    {
+      "template_name": "INVOICE.xlsx",
+      "output_name": "INVOICE_已填充.xlsx",
+      "source_sheet": "发票数据",
+      "target_sheet": "Sheet1",
+      "mappings": [
+        {
+          "source_field": "客户名称",
+          "target_cell": "B5",
+          "write_type": "single_value",
+          "required": true,
+          "overwrite_formula": false
+        },
+        {
+          "source_field": "发票号",
+          "target_cell": "F3",
+          "write_type": "single_value",
+          "required": true,
+          "overwrite_formula": false
+        },
+        {
+          "source_field": "总金额",
+          "target_cell": "E31",
+          "write_type": "single_value",
+          "required": false,
+          "overwrite_formula": false
+        }
+      ],
+      "detail_area": {
+        "source_sheet": "发票明细",
+        "target_sheet": "Sheet1",
+        "target_start_row": 10,
+        "target_end_row": 30,
+        "columns": {
+          "品名": "A",
+          "数量": "C",
+          "单价": "D",
+          "金额": "E"
+        },
+        "calculations": [
+          {
+            "target_field": "金额",
+            "formula": "数量 * 单价"
+          }
+        ]
+      }
+    }
+  ]
+}
